@@ -3,11 +3,11 @@
 % by Carl Bolstad on 7/14/2004.
 % updated from lilypond version 2.2.5 to version 2.4.1 on 1/29/2005.
 
-\version "2.7.40"
+\version "2.22.0"
 
 %*************************************
 TopVoice =  \relative b' {
- \stemUp 
+ \stemUp
 r16 bes[ bes32 \prall a bes16] c bes d bes es[ bes bes32 \prall a bes16] d bes es bes |
 f'[ bes, bes32 \prall a bes16] g' bes, a' bes, bes'[ a32 g f16 bes] c,32[ d es8 d32 c] |
 d32[ c bes8 g32 a] bes[ c d8 c32 bes] c[ bes a8 f32 g] a[ bes c8 bes32 a] |
@@ -37,7 +37,7 @@ bes1 \fermata \bar "|."
 
 %************************************
 MiddleVoice =  \relative d' {
- \stemDown 
+ \stemDown
 d4 es8 f g4 f8 es |
 d4 es8 c \stemUp d \change Staff = down bes4 a8 |
 bes \stemDown \change Staff = up d g4~ g8 c, f4~ |
@@ -63,7 +63,7 @@ d d es f f \rest es d c |
 % middle meas 20:
 bes f' es es d d' <c es> <c es> |
 <bes d f>1 |
-} 
+}
 
 %************************************
 BottomVoice =  \relative d' {
@@ -89,7 +89,7 @@ f, r r4 r8 f' d bes |
 % bottom meas 15:
 es4 r8 es d4 r8 g |
 c,4 r8 f bes, d es c |
-f16 f,[ f32 \prall e f16] g f a f bes[ f f32 \prall e f16] a f bes f 
+f16 f,[ f32 \prall e f16] g f a f bes[ f f32 \prall e f16] a f bes f
 c'[ f, f32 \prall e f16] d' f, e' f, f'8 g16 es f8 f, |
 % add tenor line from here to the end:
 <<
@@ -135,5 +135,10 @@ c'[ f, f32 \prall e f16] d' f, e' f, f'8 g16 es f8 f, |
   >>
   \layout { }
   \header { piece = "1. Praeludium" }
-  \midi { \tempo 8 = 80 }
+
+  \midi {
+    \tempo 8 = 80
+    }
+
+
 }

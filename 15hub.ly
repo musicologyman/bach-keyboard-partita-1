@@ -1,4 +1,4 @@
-\version "2.7.40"
+\version "2.22.0"
 % The fifth movement of the first Partita of J. S. Bach, set for Mutopia
 % by Carl Bolstad on 1/29/2005.
 
@@ -32,12 +32,12 @@ f2 f4
 
 tenor = {
 r4 c' d
-\once \override Stem #'extra-offset = #'(0.1 . 0)
+\once \override Stem.extra-offset = #'(0.1 . 0)
 es f2
 es2 f4~
 f c es~
 es c d
-\once \override Stem #'extra-offset = #'(0.15 . 0)
+\once \override Stem.extra-offset = #'(0.15 . 0)
 es f2
 es f4
 f2.
@@ -54,14 +54,14 @@ bes2.
 
 baritone = {
 s2.
-\once \override Stem #'transparent = ##t
-\once \override NoteHead #'extra-offset = #'(-0.2 . 0)
+\once \override Stem.transparent = ##t
+\once \override NoteHead.extra-offset = #'(-0.2 . 0)
 es2 d4~
 d c bes
 f2 r4
 s2.
-\once \override Stem #'transparent = ##t
-\once \override NoteHead #'extra-offset = #'(-0.2 . 0)
+\once \override Stem.transparent = ##t
+\once \override NoteHead.extra-offset = #'(-0.2 . 0)
 es'2 d4~
 d c bes
 f2.
@@ -182,23 +182,23 @@ g aes r
   \\
   { g4 a bes | a2. }
 >>
-\bar ":|:"
+\bar ":..:"
 << { \soprano } \\ { \alto } >>
-\bar ":|"
+\bar ":|."
 }
 %************************************
 %************************************
 %************************************
 % There's no middle voice in this one.
 %MiddleVoice =  \relative d' {
-% \stemDown 
-%} 
+% \stemDown
+%}
 
 %************************************
 %************************************
 %************************************
 % Bass part, left hand:
-BottomVoice = \relative {
+BottomVoice = \relative c' {
 \repeat volta 2 {
 bes4 f d
 bes c d
@@ -295,5 +295,10 @@ bes es, f
   >>
   \layout { }
   \header { piece = "5. Menuets" }
-  \midi { \tempo 4 = 107 }
+
+  \midi {
+    \tempo 4 = 107
+    }
+
+
 }

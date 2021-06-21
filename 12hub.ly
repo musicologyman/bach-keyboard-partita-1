@@ -1,4 +1,4 @@
-\version "2.7.40"
+\version "2.22.0"
 % The second movement of the first Partita of J. S. Bach, set for Mutopia
 % by Carl Bolstad on 8/30/2004.
 % Updated from version 2.2.5 to 2.4.1 on 1/29/2005.
@@ -48,7 +48,7 @@ bes='' g e c bes g c e f c a f r g bes e |
    r e f b, c8 bes <a c>4..
   }
 >>
-\bar ":|:"
+\bar ":..:"
 
 c'16 |
 c='' a f e f a c, f a, c f, a c es a bes |
@@ -96,8 +96,8 @@ d='' aes g c bes f es a <bes f d>4.. s16 \bar "|."
 
 %************************************
 MiddleVoice =  \relative d' {
- \stemDown 
-} 
+ \stemDown
+}
 
 %************************************
 BottomVoice =  \relative c {
@@ -115,30 +115,30 @@ bes4 r r2 |
 >>
 g8 g'4 f8 e e'4 d8 |
 c c,4 bes8 a a'4 g8 |
-f 
+f
 % Let's try switching staffs instead of clefs:
 \cu \stemDown
-%\clef "G" 
-f'[ a c] bes 
-%\clef "bass" 
+%\clef "G"
+f'[ a c] bes
+%\clef "bass"
 \cd \stemNeutral bes,[ d f] |
 
 %%%%%% Bottom measure 10 %%%%%%%%%%%%%%%%%%%%
 
-e,= 
-% \once \override Staff.Clef #'extra-offset = #'(-0.5 . 0)
+e,=
+% \once \override Staff.Clef.extra-offset = #'(-0.5 . 0)
 %\clef "G"
 % let's try this instead:
 \cu \stemDown
  e'[ g bes] a
-% \once \override Staff.Clef #'extra-offset = #'(-0.5 . 0)
+% \once \override Staff.Clef.extra-offset = #'(-0.5 . 0)
 % \clef "bass"
 \cd \stemNeutral
  a,[ c e] |
-d, 
-%\clef "G" 
+d,
+%\clef "G"
 \cu \stemDown d'[ f a] g
-% \once \override Staff.Clef #'extra-offset = #'(-0.5 . 0)
+% \once \override Staff.Clef.extra-offset = #'(-0.5 . 0)
 % \clef "bass"
 \cd \stemNeutral
  g,[ bes d] |
@@ -156,7 +156,7 @@ e'8 g c, bes a bes c c, |
    r16 g aes8~ aes g f4..
   }
  \\
-  { 
+  {
    f8. a16 bes8. a16 g8. f16 e8. e16 |
    f8. d16 c8 c, f4..
   }
@@ -170,7 +170,7 @@ fis4 r r2 |
 g8 a bes g c bes c a |
 d4 r r8 c bes a |
 g4 r r8 f' es d |
-c c' es g f f, aes c 
+c c' es g f f, aes c
 
 %%%%%% Bottom measure 25 %%%%%%%%%%%%%%%%%%%%
 
@@ -192,9 +192,9 @@ es=' d c bes a c f, a |
 
 bes= d g, c f, bes es, f |
 bes, aes' d f bes,, bes' es g |
-bes,, \cu \stemDown c'[ es a] bes16 d, c bes f'8 
-%\once \override Staff.Clef #'extra-offset = #'(-0.5 . 0)
-%\clef "bass" 
+bes,, \cu \stemDown c'[ es a] bes16 d, c bes f'8
+%\once \override Staff.Clef.extra-offset = #'(-0.5 . 0)
+%\clef "bass"
 \cd \stemNeutral
 f, \autoBeamOn |
 <<
@@ -238,5 +238,10 @@ s16
   >>
   \layout { }
   \header { piece = "2. Allemande" }
-  \midi { \tempo 4 = 60 }
+
+  \midi {
+    \tempo 4 = 60
+    }
+
+
 }

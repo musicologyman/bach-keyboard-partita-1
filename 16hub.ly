@@ -1,7 +1,7 @@
 % The sixth and last movement of the first Partita of J. S. Bach, set for Mutopia
 % by Carl Bolstad on 2/5/2005.
 
-\version "2.7.40"
+\version "2.22.0"
 
 % The following file is so I can write things
 % like fs for f# and bf for b-flat.
@@ -14,7 +14,7 @@ cd = {\change Staff = "down" }
 %************************************
 %************************************
 %*************************************
-TopVoice =  \relative {
+TopVoice =  \relative c' {
 \stemUp f'4 \cd bf,, bf, \cu f'''
 g af, g g'
 c, gf f c'
@@ -42,13 +42,13 @@ af b, c \cd c,
   { bf'8*2/3 \rest a c }
 >>
 
- \cu 
+ \cu
  <<
    { f4 f'2 }
    \\
    { r8*2/3 a, c s2 }
  >>
-\bar ":|:"
+\bar ":..:"
 
 a'4 ef, \cd f, \cu a''
 bf af, bf, bf''
@@ -87,15 +87,15 @@ df \cd gf,, f \cu df''
 e \cd df,, c \cu e''
 f \cd gf,,, f \cu ef'''
 df \cd e,, f f,
-bf \cu bf'' bf'2 \bar ":|"
+bf \cu bf'' bf'2 \bar ":|."
 }
 
 %************************************
 %************************************
 %************************************
 % Bass part, left hand:
-BottomVoice = \relative {
-\stemDown \cu c8*2/3 \rest d bf' c, \rest d bf' c, \rest d bf' c, \rest d bf' 
+BottomVoice = \relative c' {
+\stemDown \cu c8*2/3 \rest d bf' c, \rest d bf' c, \rest d bf' c, \rest d bf'
 <ef, bf'>1_\markup { \italic simile }
 <ef a>
 <f bf>
@@ -114,16 +114,16 @@ BottomVoice = \relative {
 % B meas. 15
 <e f>
 s
-%s8*2/3 \cd 
-%  \override NoteHead #'extra-offset = #'(0.5 . 0)
-%  \override Stem #'extra-offset = #'(0.5 . 0)
-%  \override Beam #'extra-offset = #'(0.5 . 0)
+%s8*2/3 \cd
+%  \override NoteHead.extra-offset = #'(0.5 . 0)
+%  \override Stem.extra-offset = #'(0.5 . 0)
+%  \override Beam.extra-offset = #'(0.5 . 0)
 
 % Let's try putting both parts together as different voices
 % on the same staff: (see the top part).
-%  \revert NoteHead #'extra-offset
-%  \revert Stem #'extra-offset
-%  \revert Beam #'extra-offset
+%  \revert NoteHead.extra-offset
+%  \revert Stem.extra-offset
+%  \revert Beam.extra-offset
 
 % End of change - CB 8/13/2006
 
@@ -163,13 +163,13 @@ s
 <a c>
 <a bf>
 r8*2/3 d f f \rest
-  \override NoteHead #'extra-offset = #'(0.5 . 0)
-  \override Stem #'extra-offset = #'(0.5 . 0)
-  \override Beam #'extra-offset = #'(0.5 . 0)
+  \override NoteHead.extra-offset = #'(0.5 . 0)
+  \override Stem.extra-offset = #'(0.5 . 0)
+  \override Beam.extra-offset = #'(0.5 . 0)
 d' f s2
-  \revert NoteHead #'extra-offset
-  \revert Stem #'extra-offset
-  \revert Beam #'extra-offset
+  \revert NoteHead.extra-offset
+  \revert Stem.extra-offset
+  \revert Beam.extra-offset
 }
 %************************************
 %************************************
@@ -201,5 +201,10 @@ d' f s2
   >>
   \layout { }
   \header { piece = "6. Giga" }
-  \midi { \tempo 4 = 107 }
+
+  \midi {
+    \tempo 4 = 107
+    }
+
+
 }
